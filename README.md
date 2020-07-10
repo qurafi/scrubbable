@@ -1,4 +1,5 @@
-# Side Slider
+# Side Slider 
+[Live Demo](https://mhmd-22.github.io/side-slider/)
 
 Lightweight library for creating side sliders to easily and precisely adjust values by taking advantage of Pointer Lock API.
 
@@ -36,6 +37,9 @@ SideSlider(inputRed, {
 Should be like this:
 
 ![image](preview/example.gif)
+
+[Live](https://mhmd-22.github.io/side-slider/demo.html)
+
 
 More examples in [demo](https://github.com/mhmd-22/side-slider/tree/master/demo) folder
 

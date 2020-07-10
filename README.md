@@ -45,7 +45,7 @@ More examples in [demo](https://github.com/mhmd-22/side-slider/tree/master/demo)
 
 ## Usage
 
-`SideSlider(HTMLElement element, Object options)`
+`SideSlider(HTMLElement element | String CSSSelector, Object options)`
 
 **Available options :**
 

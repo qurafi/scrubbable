@@ -38,7 +38,7 @@ Should be like this:
 
 ![image](preview/example.gif)
 
-[Live](https://mhmd-22.github.io/side-slider/demo.html)
+[Live](https://mhmd-22.github.io/side-slider/example.html)
 
 
 More examples in [demo](https://github.com/mhmd-22/side-slider/tree/master/demo) folder

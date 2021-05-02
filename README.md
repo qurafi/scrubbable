@@ -1,10 +1,11 @@
 # Side Slider 
 [Live Demo](https://mhmd-22.github.io/side-slider/)
-
-Lightweight library for creating side sliders to easily and precisely adjust values by taking advantage of Pointer Lock API.
-
-This is can be extremly useful in such cases like editings position, size, and color values that required a lot of precision and easy to control.
-
+<!-- TODO rewrite this thing -->
+Lightweight library for creating scrubbable inputs to easily and precisely adjust values by taking advantage of Pointer Lock API.
+- [Side Slider](#side-slider)
+  - [Preview](#preview)
+  - [Example](#example)
+  - [Usage](#usage)
 ## Preview
 
 ![image](preview/preview.gif)
@@ -22,72 +23,41 @@ SideSlider(inputRed, {
   max: 255,
   step: 1,
   threshold: 16,
-  onChange: function (e) {
-    let red = e.value;
-
-    let { width, height } = canvas;
+  onScrub: function (e) {
+    const { width, height } = canvas;
     ctx.clearRect(0, 0, width, height);
 
-    ctx.fillStyle = `rgb(${red}, 0, 0)`;
+    ctx.fillStyle = `rgb(${e.value}, 0, 0)`;
     ctx.fillRect(0, 0, width, height);
   },
 });
 ```
 
-Should be like this:
+Result:
 
 ![image](preview/example.gif)
 
-[Live](https://mhmd-22.github.io/side-slider/example.html)
+[Live](https://mhmd-22.github.io/side-slider/canvas.html)
 
 
 More examples in [demo](https://github.com/mhmd-22/side-slider/tree/master/demo) folder
 
 ## Usage
 
-`SideSlider(HTMLElement element | String CSSSelector, Object options)`
+`Scrubbable(element, options)`
 
-**Available options :**
+**Element**: Any html element
 
--   **min**(default: **`0`**): Minimum value.
--   **max**(default: **`100`**) : Maximum value.
--   **step**(default: **`1`**) : See threshold.
+**Options :**
 
-    **NOTE :** if min, max, and step is not present. it will try to get values from element attributes
 
--   **width**(default: **`4`**) : Width of area in which slider should be dragged
--   **threshold**(default: **`4`**) : Number of pixels needed to adjust one step, useful for higher precision.
--   **maxMovementX**(default: **`2`**) : Limit the acceleration of mouse movement.
--   **updateElement**(default: **`true`**) : Enable updating the value/textContent of the target element.
--   **direction**(default: **`left`**) : Direction of slider.
--   **format**(default: **`toFixed(0)`**) : Format the output value/textContent of element, For example, adding percentage symbol or round numbers.
+-   **min**, **max**, **step**, and **value**. these values are inferred if input element is supplied. otherwise you must set this
+- **decimals**(default: `auto`): this value is supplied to `Number.toFixed` before calling `update` function. the default is depends on `step` value. you can turn it off by setting it to false.
 
-```javascript
-    // by defualt. the value will be rounded
-    format: value => value.toFixed(0); // 2.5999999999999996 -> 3
-
-    // to allow decimals
-    format: value => value.toFixed(2); // 2.5999999999999996 -> 2.60
-
-    // add percentage symbol
-    format: opacity => `${opacity.toFixed(0)}%`; 39 -> 39%
-```
-
--   **onChange**({value, prev, delta, slider, target}) : to track value changes. and modifying or cancel the value
-    -   **value** : New current value.
-    -   **prev**: Previous value.
-    -   **delta**: Difference between the new and previous value.
-    -   **slider**: All configurations are stored in this object.
-    -   **target**: The target HTMLElement is linked to slider.
-
-```javascript
-    // cancel the change when value goes above 50
-    // returning false will cancel the change
-    onChange: e => e.value >= 50;
-
-    // change the value by returning a number
-    onChange: e => e.value * 2;
-
-    // inspect event object
-    onChange: e => console.table(e);
-```
+-   **width**(default: **`8`**) : If zone is not supplied. these values is used as the scrubbable area. you can set this value to `"full"` for full width or `"padding"` to use element padding
+-   **threshold**(default: **`14`**) : Number of pixels needed to adjust one step, useful for higher precision.
+-   **maxAcc**(default: **`2`**) : Limit the acceleration of mouse movement.
+-   **zone**: set custom scrubbing area instead of input element. for example, you can set input labels as the scrubbing area.
+-   **location**(default: **`left`**) : location of the scrubbing area if zone is not specified
+-   **update** : set custom updater function. by default it will update value/textContent depends on element type.
+-   **onScrub**(value, increment, config): called when scrubbing

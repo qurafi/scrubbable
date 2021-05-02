@@ -1,48 +1,47 @@
 {
-	"name": "side-slider",
-	"version": "1.0.0",
-	"description": "Add Slider functionality to your elements",
-	"keywords": [
-		"html",
-		"javascript",
-		"js",
-		"front-end",
-		"frontend",
-		"slider",
-		"range",
-		"web",
-		"library",
-		"ui",
-		"ux",
-		"interaction",
-		"browser",
-		"pointer-lock",
-		"pointer",
-		"lock",
-		"mouse",
-		"drag",
-		"control",
-		"input"
-	],
-	"author": "Mohammed Al qurafi",
-	"license": "MIT",
-	"main": "dist/sideslider.min.js",
-	"scripts": {
-		"build": "rollup -c",
-		"dev": "rollup -c -w"
-	},
-	"babel": {
-		"presets": [
-			"@babel/env"
-		]
-	},
-	"browserslist": "> 0.25%, not dead",
-	"devDependencies": {
-		"@babel/core": "^7.10.2",
-		"@babel/preset-env": "^7.10.2",
-		"@rollup/plugin-babel": "^5.0.3",
-		"eslint": "^7.2.0",
-		"rollup": "^2.16.1",
-		"rollup-plugin-terser": "^6.1.0"
-	}
+    "name": "scrubbable",
+    "version": "1.0.0",
+    "description": "Add Scrubbing functionality to your inputs",
+    "author": "Mohammed Al-Qurafi",
+    "license": "MIT",
+    "main": "dist/scrubbable.js",
+    "keywords": [
+        "scrubbing",
+        "slider",
+        "range",
+        "ux",
+        "interaction",
+        "pointer-lock",
+        "pointer",
+        "mouse",
+        "drag",
+        "control",
+        "input",
+        "number"
+    ],
+    "files": [
+        "README.md",
+        "LICENSE",
+        "dist/**"
+    ],
+    "scripts": {
+        "build": "rollup -c",
+        "dev": "rollup -cw",
+        "prepublishOnly": "cp dist/scrubbable.js demo/"
+    },
+    "babel": {
+        "presets": [
+            "@babel/env"
+        ]
+    },
+    "browserslist": "> 0.25%, not dead",
+    "devDependencies": {
+        "@babel/core": "^7.10.2",
+        "@babel/preset-env": "^7.10.2",
+        "@rollup/plugin-babel": "^5.0.3",
+        "eslint": "^7.2.0",
+        "rollup": "^2.16.1",
+        "rollup-plugin-terser": "^6.1.0"
+    },
+    "dependencies": {}
 }

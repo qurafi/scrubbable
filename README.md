@@ -4,7 +4,7 @@
 Lightweight library for creating scrubbable inputs to easily and precisely adjust values by taking advantage of Pointer Lock API.
 
 ## Preview
-![image](preview/preview.gif)
+![image](https://github.com/mhmd-22/scrubbable/raw/main/preview/preview.gif)
 
 ## Example
 
@@ -31,7 +31,7 @@ Scrubbable(inputRed, {
 
 Result:
 
-![image](preview/example.gif)
+![image](https://github.com/mhmd-22/scrubbable/raw/main/preview/example.gif)
 
 [Live](https://mhmd-22.github.io/scrubbable/canvas.html)
 

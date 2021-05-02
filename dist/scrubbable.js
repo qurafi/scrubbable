@@ -53,7 +53,6 @@
     return target;
   }
 
-  //TODO add mouse sensitivity;
   var defaults = {
     width: 8,
     location: "left",

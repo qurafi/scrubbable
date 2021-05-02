@@ -13,7 +13,7 @@ let mouseX = 0;
 let mouseY = 0;
 let lastMouseX = 0;
 
-export default function Scrubbable(elm, config) {
+export default function Scrubbable(elm, config = {}) {
     elm.requestPointerLock =
         elm.requestPointerLock ||
         elm.mozRequestPointerLock ||
@@ -169,7 +169,7 @@ listen(window, "load", () => {
 });
 
 function onPointerLockChange() {
-    if (getLockedElement()) cursorSVG.style.display = "block";
+    if (getLockedElement() && cursorSVG) cursorSVG.style.display = "block";
 }
 
 listen(document, "pointerlockchange", onPointerLockChange, false);

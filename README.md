@@ -1,13 +1,9 @@
-# Side Slider 
-[Live Demo](https://mhmd-22.github.io/side-slider/)
-<!-- TODO rewrite this thing -->
-Lightweight library for creating scrubbable inputs to easily and precisely adjust values by taking advantage of Pointer Lock API.
-- [Side Slider](#side-slider)
-  - [Preview](#preview)
-  - [Example](#example)
-  - [Usage](#usage)
-## Preview
+# Scrubbable
+[Live Demo](https://mhmd-22.github.io/scrubbable/)
 
+Lightweight library for creating scrubbable inputs to easily and precisely adjust values by taking advantage of Pointer Lock API.
+
+## Preview
 ![image](preview/preview.gif)
 
 ## Example
@@ -18,7 +14,7 @@ const ctx = canvas.getContext('2d');
 
 const inputRed = document.getElementById('input_red');
 
-SideSlider(inputRed, {
+Scrubbable(inputRed, {
   min: 0,
   max: 255,
   step: 1,
@@ -37,10 +33,10 @@ Result:
 
 ![image](preview/example.gif)
 
-[Live](https://mhmd-22.github.io/side-slider/canvas.html)
+[Live](https://mhmd-22.github.io/scrubbable/canvas.html)
 
 
-More examples in [demo](https://github.com/mhmd-22/side-slider/tree/master/demo) folder
+More examples in [demo](/demo) folder
 
 ## Usage
 

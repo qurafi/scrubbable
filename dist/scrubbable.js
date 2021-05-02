@@ -93,7 +93,8 @@
   var mouseX = 0;
   var mouseY = 0;
   var lastMouseX = 0;
-  function Scrubbable(elm, config) {
+  function Scrubbable(elm) {
+    var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     elm.requestPointerLock = elm.requestPointerLock || elm.mozRequestPointerLock || elm.webkitRequestPointerLock || noop;
     var el = config.zone || elm;
     var events = [listen(el, "mousedown", onMouseDown), listen(el, "mousemove", changeMouseIcon), listen(el, "mouseleave", changeMouseIcon)];
@@ -235,7 +236,7 @@
   });
 
   function onPointerLockChange() {
-    if (getLockedElement()) cursorSVG.style.display = "block";
+    if (getLockedElement() && cursorSVG) cursorSVG.style.display = "block";
   }
 
   listen(document, "pointerlockchange", onPointerLockChange, false);

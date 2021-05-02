@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<script src="scrubbable.js" defer></script>
+	<script src="canvas.js" defer></script>
+	<style>
+		html {
+			height: 100%;
+			background: #151515;
+			color: white;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+
+		body {
+			position: relative;
+			margin-top: 10%;
+			text-align: center;
+		}
+
+		h3 {
+			font-weight: 400;
+		}
+
+		canvas {
+			margin-right: 15px;
+			margin-top: 1em;
+			border: 1px solid #aaa;
+		}
+
+		label {
+			display: inline-block;
+			width: 50px;
+		}
+
+		input {
+			margin-right: 1em;
+			padding-left: 8px
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<h3>Change Canvas Color by scrubbing these</h3>
+		<div>
+			<label for="red" id="info">Red:</label>
+			<input type="number" id="red" />
+			<label for="green" id="info">Green:</label>
+			<input type="number" id="green" />
+			<label for="blue" id="info">Blue:</label>
+			<input type="number" id="blue" />
+		</div>
+		<canvas id="canvas_1"></canvas>
+	</div>
+</body>
+
+</html>
